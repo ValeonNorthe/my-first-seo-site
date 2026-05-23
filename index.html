@@ -10,31 +10,96 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-  
     gtag('config', 'G-KV32QC2X5T');
   </script>
-  <title>キーボード不具合メモ</title>
+
+  <title>Memo — 気になったことを書く場所</title>
+  <meta name="description" content="日々の気になることや調べたことを、忘れないうちに書いておく場所。">
+
+  <!-- OGP -->
+  <meta property="og:title" content="Memo — 気になったことを書く場所">
+  <meta property="og:description" content="日々の気になることや調べたことを、忘れないうちに書いておく場所。">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
 </head>
-
 <body>
-  <h1>Lenovo Tab P12 キーボード不具合メモ</h1>
 
-  <p>
-    キーボードの一部キーが反応しなくなった時の記録。
-  </p>
+  <header>
+    <div class="header-inner">
+      <a href="/" class="site-name">
+        Memo
+        <span>気になったことを書く場所</span>
+      </a>
+      <nav>
+        <a href="/">記事</a>
+        <a href="/about.html">About</a>
+      </nav>
+    </div>
+  </header>
 
-  <h2>症状</h2>
-  <ul>
-    <li>Wキーが反応しない</li>
-    <li>Shiftキーが効かない</li>
-  </ul>
+  <main>
+    <!-- ▼ 注目記事（最新・メイン） -->
+    <div class="featured">
+      <span class="tag">SEO</span>
+      <h1><a href="/posts/cloudflare-pages-seo.html">CloudflarePages でサイトを公開して Search Console に登録するまで</a></h1>
+      <p class="desc">
+        GitHub にコードを置き、CloudflarePages でビルド＆デプロイ、Google Analytics と Search Console を連携した。
+        意外とハマりどころがあったので手順をまとめておく。
+      </p>
+      <div class="meta">
+        <time datetime="2026-05-23">2026年5月23日</time>
+        <span class="dot">·</span>
+        <span>5 分</span>
+      </div>
+    </div>
 
-  <h2>試したこと</h2>
-  <ul>
-    <li>再接続</li>
-    <li>掃除</li>
-    <li>再起動</li>
-  </ul>
+    <div class="divider"></div>
+
+    <p class="section-label">最近の記事</p>
+
+    <!-- ▼ 記事一覧（ここを増やしていく） -->
+    <div class="articles">
+
+      <article class="article-row">
+        <div>
+          <span class="tag">ツール</span>
+          <h2><a href="/posts/google-analytics-basics.html">Google Analytics 4 の基本的な見方</a></h2>
+          <p class="desc">GA4 は UA と画面構成がかなり違う。最初に見るべきレポートと、Search Console との連携方法。</p>
+          <div class="meta"><time datetime="2026-05-20">2026年5月20日</time></div>
+        </div>
+        <time class="date" datetime="2026-05-20">05/20</time>
+      </article>
+
+      <article class="article-row">
+        <div>
+          <span class="tag">メモ</span>
+          <h2><a href="/posts/seo-basics.html">SEO を始めるときに最初に読んだもの</a></h2>
+          <p class="desc">Google の公式ドキュメントと、実際に参考になったブログ記事をまとめた個人的なリンク集。</p>
+          <div class="meta"><time datetime="2026-05-18">2026年5月18日</time></div>
+        </div>
+        <time class="date" datetime="2026-05-18">05/18</time>
+      </article>
+
+      <article class="article-row">
+        <div>
+          <span class="tag">開発</span>
+          <h2><a href="/posts/cloudflare-pages-setup.html">CloudflarePages に GitHub リポジトリを接続する</a></h2>
+          <p class="desc">無料プランで使えること、デプロイが速いこと、カスタムドメインの設定が楽なこと。</p>
+          <div class="meta"><time datetime="2026-05-15">2026年5月15日</time></div>
+        </div>
+        <time class="date" datetime="2026-05-15">05/15</time>
+      </article>
+
+    </div>
+    <!-- ▲ ここまで記事一覧 -->
+  </main>
+
+  <footer>
+    <p>© 2026 Memo</p>
+  </footer>
 
 </body>
 </html>
