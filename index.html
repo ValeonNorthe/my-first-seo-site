@@ -1,108 +1,369 @@
 <!DOCTYPE html>
 <html lang="ja" data-theme="">
 <head>
+
+  <!-- 基本設定 -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Search Console -->
   <meta name="google-site-verification" content="b3mTOkDe_Zxg_QFLNqGfGt2r9aDAKe_wGa1OVXJf2yo">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KV32QC2X5T"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-KV32QC2X5T');
-    (function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);})();
+
+  <!-- SEO -->
+  <title>Memo | ノイズキャンセリング・ガジェット・作業環境の個人メモ</title>
+
+  <meta
+    name="description"
+    content="ノイズキャンセリング、ガジェット、作業環境、集中、疲労感などについて調べて整理する個人メモ。"
+  >
+
+  <!-- canonical -->
+  <link
+    rel="canonical"
+    href="https://valeonnorthe.github.io/my-first-seo-site/"
+  >
+
+  <!-- OGP -->
+  <meta
+    property="og:title"
+    content="Memo | ノイズキャンセリング・ガジェット・作業環境の個人メモ"
+  >
+
+  <meta
+    property="og:description"
+    content="ノイズキャンセリング、ガジェット、作業環境、集中、疲労感などについて調べて整理する個人メモ。"
+  >
+
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+  <meta
+    property="og:url"
+    content="https://valeonnorthe.github.io/my-first-seo-site/"
+  >
+
+  <meta
+    property="og:image"
+    content="https://valeonnorthe.github.io/my-first-seo-site/images/ogp.jpg"
+  >
+
+  <meta property="og:site_name" content="Memo">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta
+    name="twitter:title"
+    content="Memo | ノイズキャンセリング・ガジェット・作業環境の個人メモ"
+  >
+
+  <meta
+    name="twitter:description"
+    content="ノイズキャンセリング、ガジェット、作業環境、集中、疲労感などについて調べて整理する個人メモ。"
+  >
+
+  <meta
+    name="twitter:image"
+    content="https://valeonnorthe.github.io/my-first-seo-site/images/ogp.jpg"
+  >
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Memo",
+    "url": "https://valeonnorthe.github.io/my-first-seo-site/",
+    "description": "ノイズキャンセリング、ガジェット、作業環境、集中、疲労感などについて調べて整理する個人メモ。",
+    "inLanguage": "ja-JP"
+  }
   </script>
 
-  <title>Memo — index.html</title>
-  <link rel="canonical" href="https://valeonnorthe.github.io/my-first-seo-site/index.html">
-  <meta name="description" content="ノイズキャンセリング、ガジェット、暮らしの工夫。気になったことを調べて書く個人メモ。">
-  <meta property="og:title" content="Memo — index.html">
-  <meta property="og:description" content="ノイズキャンセリング、ガジェット、暮らしの工夫。気になったことを調べて書く個人メモ。">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://valeonnorthe.github.io/my-first-seo-site/images/ogp.png">
-  <meta property="og:url" content="https://valeonnorthe.github.io/my-first-seo-site/index.html">
-  <meta name="twitter:card" content="https://valeonnorthe.github.io/my-first-seo-site/images/ogp.png"">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KV32QC2X5T"></script>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag(){
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-KV32QC2X5T');
+
+    (function () {
+      const t = localStorage.getItem('theme');
+
+      if (t) {
+        document.documentElement.setAttribute('data-theme', t);
+      }
+    })();
+  </script>
+
+  <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@400;500&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- CSS -->
   <link rel="stylesheet" href="./style.css">
+
 </head>
+
 <body>
 
   <header class="site-header">
     <div class="header-inner">
-      <a href="./index.html" class="site-logo">Memo</a>
+
+      <a href="./index.html" class="site-logo">
+        Memo
+      </a>
+
       <div class="header-actions">
-        <a href="./about.html" class="nav-link">About</a>
-        <button class="theme-btn" aria-label="ダークモード切り替え">
-          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"/>
+
+        <a href="./about.html" class="nav-link">
+          About
+        </a>
+
+        <button
+          class="theme-btn"
+          aria-label="ダークモード切り替え"
+        >
+
+          <!-- moon -->
+          <svg
+            class="icon-moon"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="1.8"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"
+            />
           </svg>
-          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-            <circle cx="12" cy="12" r="5"/><path stroke-linecap="round" d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+
+          <!-- sun -->
+          <svg
+            class="icon-sun"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="1.8"
+          >
+            <circle cx="12" cy="12" r="5"/>
+
+            <path
+              stroke-linecap="round"
+              d="M12 2v2
+                 M12 20v2
+                 M4.22 4.22l1.42 1.42
+                 M18.36 18.36l1.42 1.42
+                 M2 12h2
+                 M20 12h2
+                 M4.22 19.78l1.42-1.42
+                 M18.36 5.64l1.42-1.42"
+            />
           </svg>
+
         </button>
+
       </div>
     </div>
   </header>
 
   <main class="page">
 
+    <!-- Hero -->
     <section class="hero">
-      <span class="tag accent">ガジェット</span>
+
+      <span class="tag accent">
+        ガジェット
+      </span>
+
       <h1 class="hero-title">
-        <a href="posts/what-is-noise-cancelling.html">ノイズキャンセリングって何？仕組みをわかりやすく解説</a>
+        <a href="posts/what-is-noise-cancelling.html">
+          ノイズキャンセリングって何？仕組みをわかりやすく解説
+        </a>
       </h1>
+
       <p class="hero-desc">
-        市販のノイズキャンセリングの仕組みが気になって、原理から調べた。
-        フィードフォワード型とフィードバック型の違い、実際に回路を組んでみたときのメモ。
+        市販のノイズキャンセリングの仕組みが気になって、
+        原理から調べた。
+
+        フィードフォワード型とフィードバック型の違い、
+        実際に回路を組んでみたときのメモ。
       </p>
+
       <div class="hero-meta">
         <span class="meta-item">2026年5月23日</span>
+
         <span class="meta-dot">·</span>
-        <span class="meta-item">8 分で読める</span>
+
+        <span class="meta-item">
+          8 分で読める
+        </span>
       </div>
-      <a href="posts/what-is-noise-cancelling.html" class="read-more">
+
+      <a
+        href="posts/what-is-noise-cancelling.html"
+        class="read-more"
+      >
         読む
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/>
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M5 12h14M12 5l7 7-7 7"
+          />
         </svg>
+
       </a>
+
     </section>
 
-    <p class="section-label">最近の記事</p>
+    <!-- section title -->
+    <p class="section-label">
+      最近の記事
+    </p>
 
+    <!-- article list -->
     <div class="article-list">
 
-      <a class="article-card" href="posts/google-analytics-basics.html">
+      <!-- card -->
+      <a
+        class="article-card"
+        href="posts/google-analytics-basics.html"
+      >
+
         <div class="article-card-body">
-          <div class="article-card-tag"><span class="tag">ツール</span></div>
-          <p class="article-card-title">Google Analytics 4 の基本的な見方</p>
-          <p class="article-card-desc">GA4 は UA と画面構成がかなり違う。最初に見るべきレポートと、Search Console との連携方法。</p>
-          <span class="article-card-meta">2026年5月20日 · 5分</span>
+
+          <div class="article-card-tag">
+            <span class="tag">ツール</span>
+          </div>
+
+          <p class="article-card-title">
+            Google Analytics 4 の基本的な見方
+          </p>
+
+          <p class="article-card-desc">
+            GA4 は UA と画面構成がかなり違う。
+            最初に見るべきレポートと、
+            Search Console との連携方法。
+          </p>
+
+          <span class="article-card-meta">
+            2026年5月20日 · 5分
+          </span>
+
         </div>
-        <time class="article-card-date" datetime="2026-05-20">05/20</time>
+
+        <time
+          class="article-card-date"
+          datetime="2026-05-20"
+        >
+          05/20
+        </time>
+
       </a>
 
-      <a class="article-card" href="posts/seo-basics.html">
+      <!-- card -->
+      <a
+        class="article-card"
+        href="posts/seo-basics.html"
+      >
+
         <div class="article-card-body">
-          <div class="article-card-tag"><span class="tag">メモ</span></div>
-          <p class="article-card-title">SEO を始めるときに最初に読んだもの</p>
-          <p class="article-card-desc">Google の公式ドキュメントと、参考になったブログ記事をまとめた個人的なリンク集。</p>
-          <span class="article-card-meta">2026年5月18日 · 4分</span>
+
+          <div class="article-card-tag">
+            <span class="tag">メモ</span>
+          </div>
+
+          <p class="article-card-title">
+            SEO を始めるときに最初に読んだもの
+          </p>
+
+          <p class="article-card-desc">
+            Google の公式ドキュメントと、
+            参考になったブログ記事をまとめた
+            個人的なリンク集。
+          </p>
+
+          <span class="article-card-meta">
+            2026年5月18日 · 4分
+          </span>
+
         </div>
-        <time class="article-card-date" datetime="2026-05-18">05/18</time>
+
+        <time
+          class="article-card-date"
+          datetime="2026-05-18"
+        >
+          05/18
+        </time>
+
       </a>
 
-      <a class="article-card" href="posts/cloudflare-pages-seo.html">
+      <!-- card -->
+      <a
+        class="article-card"
+        href="posts/cloudflare-pages-seo.html"
+      >
+
         <div class="article-card-body">
-          <div class="article-card-tag"><span class="tag">開発</span></div>
-          <p class="article-card-title">CloudflarePages でサイトを公開して Search Console に登録するまで</p>
-          <p class="article-card-desc">GitHub にコードを置き、デプロイ・GA・Search Console を連携した。意外とハマりどころがあった。</p>
-          <span class="article-card-meta">2026年5月15日 · 6分</span>
+
+          <div class="article-card-tag">
+            <span class="tag">開発</span>
+          </div>
+
+          <p class="article-card-title">
+            Cloudflare Pages でサイトを公開して
+            Search Console に登録するまで
+          </p>
+
+          <p class="article-card-desc">
+            GitHub にコードを置き、
+            デプロイ・GA・Search Console を連携した。
+            意外とハマりどころがあった。
+          </p>
+
+          <span class="article-card-meta">
+            2026年5月15日 · 6分
+          </span>
+
         </div>
-        <time class="article-card-date" datetime="2026-05-15">05/15</time>
+
+        <time
+          class="article-card-date"
+          datetime="2026-05-15"
+        >
+          05/15
+        </time>
+
       </a>
 
     </div>
@@ -110,15 +371,36 @@
   </main>
 
   <footer class="site-footer">
-    <p>© 2026 Memo · <a href="./about.html">About</a></p>
+    <p>
+      © 2026 Memo ·
+      <a href="./about.html">About</a>
+    </p>
   </footer>
 
-  <button class="scroll-top" aria-label="ページ上部へ戻る">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/>
+  <!-- scroll top -->
+  <button
+    class="scroll-top"
+    aria-label="ページ上部へ戻る"
+  >
+
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      stroke-width="2"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M5 15l7-7 7 7"
+      />
     </svg>
+
   </button>
 
+  <!-- JS -->
   <script src="main.js" defer></script>
+
 </body>
 </html>
