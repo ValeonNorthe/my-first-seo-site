@@ -1,54 +1,139 @@
 /* main.js — lightweight, no dependencies */
+
 (function () {
+
   'use strict';
 
-  /* ── Theme ── */
+  /* ─────────────────────────
+     Theme
+  ───────────────────────── */
+
   const root = document.documentElement;
-  const stored = localStorage.getItem('theme');
-  if (stored) root.setAttribute('data-theme', stored);
+
+  const storedTheme = localStorage.getItem('theme');
+
+  if (storedTheme) {
+    root.setAttribute('data-theme', storedTheme);
+  }
 
   function toggleTheme() {
-    const current = root.getAttribute('data-theme');
-    const sys = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    let next;
-    if (!current) {
-      next = sys === 'dark' ? 'light' : 'dark';
+
+    const currentTheme = root.getAttribute('data-theme');
+
+    const systemTheme = window.matchMedia(
+      '(prefers-color-scheme: dark)'
+    ).matches
+      ? 'dark'
+      : 'light';
+
+    let nextTheme;
+
+    if (!currentTheme) {
+
+      nextTheme =
+        systemTheme === 'dark'
+          ? 'light'
+          : 'dark';
+
     } else {
-      next = current === 'dark' ? 'light' : 'dark';
+
+      nextTheme =
+        currentTheme === 'dark'
+          ? 'light'
+          : 'dark';
     }
-    root.setAttribute('data-theme', next);
-    localStorage.setItem('theme', next);
+
+    root.setAttribute('data-theme', nextTheme);
+
+    localStorage.setItem('theme', nextTheme);
   }
 
-  document.querySelectorAll('.theme-btn').forEach(function (btn) {
-    btn.addEventListener('click', toggleTheme);
-  });
+  document
+    .querySelectorAll('.theme-btn')
+    .forEach(function (button) {
 
-  /* ── Reading progress bar ── */
-  var bar = document.querySelector('.progress-bar');
-  if (bar) {
-    function updateProgress() {
-      var scrollTop = window.scrollY || document.documentElement.scrollTop;
-      var docH = document.documentElement.scrollHeight - window.innerHeight;
-      var pct = docH > 0 ? (scrollTop / docH) * 100 : 0;
-      bar.style.width = Math.min(pct, 100) + '%';
-    }
-    window.addEventListener('scroll', updateProgress, { passive: true });
-    updateProgress();
-  }
+      button.addEventListener(
+        'click',
+        toggleTheme
+      );
 
-  /* ── Scroll-to-top button ── */
-  var scrollBtn = document.querySelector('.scroll-top');
-  if (scrollBtn) {
-    window.addEventListener('scroll', function () {
-      if (window.scrollY > 400) {
-        scrollBtn.classList.add('visible');
-      } else {
-        scrollBtn.classList.remove('visible');
-      }
-    }, { passive: true });
-    scrollBtn.addEventListener('click', function () {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+
+  /* ─────────────────────────
+     Reading Progress Bar
+  ───────────────────────── */
+
+  const progressBar =
+    document.querySelector('.progress-bar');
+
+  if (progressBar) {
+
+    function updateProgressBar() {
+
+      const scrollTop =
+        window.scrollY ||
+        document.documentElement.scrollTop;
+
+      const documentHeight =
+        document.documentElement.scrollHeight -
+        window.innerHeight;
+
+      const progress =
+        documentHeight > 0
+          ? (scrollTop / documentHeight) * 100
+          : 0;
+
+      progressBar.style.width =
+        Math.min(progress, 100) + '%';
+    }
+
+    window.addEventListener(
+      'scroll',
+      updateProgressBar,
+      { passive: true }
+    );
+
+    updateProgressBar();
   }
+
+  /* ─────────────────────────
+     Scroll To Top Button
+  ───────────────────────── */
+
+  const scrollTopButton =
+    document.querySelector('.scroll-top');
+
+  if (scrollTopButton) {
+
+    function toggleScrollButton() {
+
+      if (window.scrollY > 400) {
+
+        scrollTopButton.classList.add('visible');
+
+      } else {
+
+        scrollTopButton.classList.remove('visible');
+      }
+    }
+
+    window.addEventListener(
+      'scroll',
+      toggleScrollButton,
+      { passive: true }
+    );
+
+    scrollTopButton.addEventListener(
+      'click',
+      function () {
+
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+
+      }
+    );
+  }
+
 })();
