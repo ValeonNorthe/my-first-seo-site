@@ -332,3 +332,43 @@
   color: var(--accent);
   transform: translateX(3px);
 }
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+.site-footer {
+  margin-top: var(--sp-12);
+
+  border-top: 1px solid var(--border);
+}
+
+.footer-inner {
+  max-width: var(--max-w);
+
+  margin: 0 auto;
+
+  padding:
+    var(--sp-8)
+    var(--sp-5);
+
+  text-align: center;
+}
+
+.site-footer p {
+  font-size: 0.8rem;
+  color: var(--text-3);
+
+  line-height: 1.8;
+}
+
+.site-footer a {
+  color: var(--text-2);
+  text-decoration: none;
+
+  transition: color 0.15s ease;
+}
+
+.site-footer a:hover {
+  color: var(--accent);
+}

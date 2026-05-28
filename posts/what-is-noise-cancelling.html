@@ -1,206 +1,600 @@
 <!DOCTYPE html>
 <html lang="ja" data-theme="">
-<head>
+  <head>
 
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    >
 
-  <meta
-    name="google-site-verification"
-    content="b3mTOkDe_Zxg_QFLNqGfGt2r9aDAKe_wGa1OVXJf2yo"
-  >
+    <meta
+      name="google-site-verification"
+      content="b3mTOkDe_Zxg_QFLNqGfGt2r9aDAKe_wGa1OVXJf2yo"
+    >
 
-  <!-- SEO -->
-  <title>
-    ノイズキャンセリングって何？仕組みをわかりやすく解説 | Memo
-  </title>
+    <!-- SEO -->
+    <title>
+      ノイズキャンセリングって何？仕組みをわかりやすく解説 | Memo
+    </title>
 
-  <meta
-    name="description"
-    content="ノイズキャンセリング（ANC）の仕組みをわかりやすく解説。逆位相による音の打ち消し、フィードフォワード型・フィードバック型の違い、自作回路の実験までまとめました。"
-  >
+    <meta
+      name="description"
+      content="ノイズキャンセリング（ANC）の仕組みをわかりやすく解説。逆位相による音の打ち消し、フィードフォワード型・フィードバック型の違い、自作回路の実験までまとめました。"
+    >
 
-  <link
-    rel="canonical"
-    href="https://valeonnorthe.github.io/my-first-seo-site/posts/what-is-noise-cancelling.html"
-  >
+    <link
+      rel="canonical"
+      href="https://valeonnorthe.github.io/my-first-seo-site/posts/what-is-noise-cancelling.html"
+    >
 
-  <!-- OGP -->
-  <meta
-    property="og:title"
-    content="ノイズキャンセリングって何？仕組みをわかりやすく解説 | Memo"
-  >
+    <!-- OGP -->
+    <meta
+      property="og:title"
+      content="ノイズキャンセリングって何？仕組みをわかりやすく解説 | Memo"
+    >
 
-  <meta
-    property="og:description"
-    content="ノイズキャンセリング（ANC）の原理や種類、自作回路の実験までわかりやすく解説。"
-  >
+    <meta
+      property="og:description"
+      content="ノイズキャンセリング（ANC）の原理や種類、自作回路の実験までわかりやすく解説。"
+    >
 
-  <meta property="og:type" content="article">
+    <meta property="og:type" content="article">
 
-  <meta
-    property="og:url"
-    content="https://valeonnorthe.github.io/my-first-seo-site/posts/what-is-noise-cancelling.html"
-  >
+    <meta
+      property="og:url"
+      content="https://valeonnorthe.github.io/my-first-seo-site/posts/what-is-noise-cancelling.html"
+    >
 
-  <meta
-    property="og:image"
-    content="https://valeonnorthe.github.io/my-first-seo-site/images/ogp.jpg"
-  >
+    <meta
+      property="og:image"
+      content="https://valeonnorthe.github.io/my-first-seo-site/images/ogp.jpg"
+    >
 
-  <meta property="og:site_name" content="Memo">
+    <meta property="og:site_name" content="Memo">
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
 
-  <meta
-    name="twitter:image"
-    content="https://valeonnorthe.github.io/my-first-seo-site/images/ogp.jpg"
-  >
+    <meta
+      name="twitter:image"
+      content="https://valeonnorthe.github.io/my-first-seo-site/images/ogp.jpg"
+    >
 
-  <!-- JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "ノイズキャンセリングって何？仕組みをわかりやすく解説",
-    "description": "ノイズキャンセリング（ANC）の仕組みをわかりやすく解説。逆位相による音の打ち消し、フィードフォワード型・フィードバック型の違い、自作回路の実験までまとめました。",
-    "author": {
-      "@type": "Person",
-      "name": "Ryoya"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Memo"
-    },
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://valeonnorthe.github.io/my-first-seo-site/posts/what-is-noise-cancelling.html"
-    }
-  }
-  </script>
-
-  <!-- Analytics -->
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=G-KV32QC2X5T"
-  ></script>
-
-  <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-    gtag('config', 'G-KV32QC2X5T');
-
-    (function () {
-      var t = localStorage.getItem('theme');
-
-      if (t) {
-        document.documentElement.setAttribute('data-theme', t);
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "ノイズキャンセリングって何？仕組みをわかりやすく解説",
+      "description": "ノイズキャンセリング（ANC）の仕組みをわかりやすく解説。逆位相による音の打ち消し、フィードフォワード型・フィードバック型の違い、自作回路の実験までまとめました。",
+      "author": {
+        "@type": "Person",
+        "name": "Ryoya"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Memo"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://valeonnorthe.github.io/my-first-seo-site/posts/what-is-noise-cancelling.html"
       }
-    })();
-  </script>
+    }
+    </script>
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-KV32QC2X5T"
+    ></script>
 
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
+    <script>
+      window.dataLayer = window.dataLayer || [];
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@400;500&display=swap"
-    rel="stylesheet"
-  >
+      function gtag() {
+        dataLayer.push(arguments);
+      }
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="../style.css">
+      gtag('js', new Date());
+      gtag('config', 'G-KV32QC2X5T');
 
-</head>
+      (function () {
+        var t = localStorage.getItem('theme');
 
-<body>
+        if (t) {
+          document.documentElement.setAttribute('data-theme', t);
+        }
+      })();
+    </script>
 
-  <!-- Reading Progress -->
-  <div
-    class="progress-bar"
-    role="progressbar"
-    aria-label="読書の進捗"
-  ></div>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-  <!-- Header -->
-  <header class="site-header">
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    >
 
-    <div class="header-inner">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@400;500&display=swap"
+      rel="stylesheet"
+    >
 
-      <a href="../index.html" class="site-logo">
-        Memo
-      </a>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../style.css">
 
-      <div class="header-actions">
+  </head>
 
-        <a href="../about.html" class="nav-link">
-          About
+  <body>
+
+    <!-- Reading Progress -->
+    <div
+      class="progress-bar"
+      role="progressbar"
+      aria-label="読書の進捗"
+    ></div>
+
+    <!-- Header -->
+    <header class="site-header">
+
+      <div class="header-inner">
+
+        <a href="../index.html" class="site-logo">
+          Memo
         </a>
 
-        <button
-          class="theme-btn"
-          aria-label="ダークモード切り替え"
+        <div class="header-actions">
+
+          <a href="../about.html" class="nav-link">
+            About
+          </a>
+
+          <button
+            class="theme-btn"
+            aria-label="ダークモード切り替え"
+          >
+
+            <svg
+              class="icon-moon"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"
+              />
+            </svg>
+
+            <svg
+              class="icon-sun"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+              <circle cx="12" cy="12" r="5"/>
+
+              <path
+                stroke-linecap="round"
+                d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"
+              />
+            </svg>
+
+          </button>
+
+        </div>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main class="page">
+
+      <!-- Back -->
+      <a
+        class="article-back"
+        href="../index.html"
+      >
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
         >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15 19l-7-7 7-7"
+          />
+        </svg>
+
+        記事一覧
+
+      </a>
+
+      <!-- Article Header -->
+      <header class="article-header">
+
+        <div class="article-tag-row">
+
+          <span class="tag accent">
+            ガジェット
+          </span>
+
+          <span class="tag">
+            電子工作
+          </span>
+
+        </div>
+
+        <h1 class="article-title">
+          ノイズキャンセリングって何？
+          仕組みをわかりやすく解説
+        </h1>
+
+        <div class="article-meta">
+
+          <span class="meta-item">
+            2026年5月23日
+          </span>
+
+          <span class="meta-dot">
+            ·
+          </span>
+
+          <span class="meta-item">
+            8 分で読める
+          </span>
+
+        </div>
+
+      </header>
+
+      <!-- TOC -->
+      <nav class="toc" aria-label="目次">
+
+        <p class="toc-label">
+          目次
+        </p>
+
+        <ol class="toc-list">
+
+          <li>
+            <a href="#why">
+              なぜ自作しようと思ったか
+            </a>
+          </li>
+
+          <li>
+            <a href="#principle">
+              ノイズキャンセリングの原理
+            </a>
+          </li>
+
+          <li>
+            <a href="#types">
+              フィードフォワード型とフィードバック型
+            </a>
+          </li>
+
+          <li>
+            <a href="#circuit">
+              実際に回路を組んでみた
+            </a>
+          </li>
+
+          <li>
+            <a href="#result">
+              結果と感想
+            </a>
+          </li>
+
+          <li>
+            <a href="#next">
+              次にやること
+            </a>
+          </li>
+
+        </ol>
+
+      </nav>
+
+      <!-- Article -->
+      <article class="article-body">
+
+        <h2 id="why">
+          なぜ自作しようと思ったか
+        </h2>
+
+        <p>
+          SONY の WH-1000XM シリーズを使っていて、
+          ふと「これどういう仕組みで音を消してるんだろう」
+          と気になった。
+        </p>
+
+        <p>
+          調べ始めると想像より面白くて、
+          気がついたら部品を注文していた。
+        </p>
+
+        <p>
+          完全に再現することは最初から目指していない。
+          原理を手を動かして理解したかっただけ。
+        </p>
+
+        <p>
+          結果として、
+          ちゃんと「ノイズが小さくなる」ものは作れた。
+          市販品の足元にも及ばないけど。
+        </p>
+
+        <h2 id="principle">
+          ノイズキャンセリングの原理
+        </h2>
+
+        <p>
+          ノイズキャンセリング（ANC: Active Noise Cancellation）は、
+          入ってくる騒音と逆位相の音を生成して打ち消す技術だ。
+        </p>
+
+        <p>
+          音は波なので、
+          同じ振幅で位相が180°ずれた波を重ねると
+          理論上は消える。
+        </p>
+
+        <blockquote>
+          音波の重ね合わせの原理。
+          山と谷がぴったり合うと振幅がゼロになる。
+        </blockquote>
+
+        <p>
+          問題は「リアルタイムで逆位相を生成する」こと。
+          処理遅延が数ミリ秒あるだけで位相がズレて、
+          むしろ音が大きくなることもある。
+        </p>
+
+        <p>
+          市販品の DSP がいかに優秀かを
+          実感することになった。
+        </p>
+
+        <h2 id="types">
+          フィードフォワード型とフィードバック型
+        </h2>
+
+        <p>
+          ANC の実装には大きく2種類ある。
+        </p>
+
+        <h3>
+          フィードフォワード型（FF型）
+        </h3>
+
+        <p>
+          マイクをイヤホンの外側に置き、
+          騒音が耳に届く前に検出して
+          逆位相を生成する方式。
+        </p>
+
+        <p>
+          外部騒音を先読みできるので、
+          低遅延で処理しやすい。
+          ただし、マイク位置がズレると
+          効果が落ちる。
+        </p>
+
+        <h3>
+          フィードバック型（FB型）
+        </h3>
+
+        <p>
+          マイクを耳の近くに置く方式。
+          実際に耳元へ届いた音を見て補正するので、
+          装着ズレに強い。
+        </p>
+
+        <p>
+          ただし制御ループの安定化が難しく、
+          発振するリスクがある。
+        </p>
+
+        <p>
+          最近の高級機は両方を組み合わせた
+          ハイブリッド型が多い。
+        </p>
+
+        <h2 id="circuit">
+          実際に回路を組んでみた
+        </h2>
+
+        <p>
+          使ったもの：
+        </p>
+
+        <ul>
+
+          <li>
+            ECMマイク
+          </li>
+
+          <li>
+            LM358N オペアンプ
+          </li>
+
+          <li>
+            イヤホンユニット
+          </li>
+
+          <li>
+            ブレッドボード
+          </li>
+
+        </ul>
+
+        <pre><code>マイク → マイクアンプ → 反転アンプ → イヤホン</code></pre>
+
+        <p>
+          最初は盛大に発振した。
+          マイクとイヤホンが近すぎて
+          ハウリングを起こしていた。
+        </p>
+
+        <p>
+          距離を取って、
+          ゲインを下げたら安定した。
+        </p>
+
+        <h2 id="result">
+          結果と感想
+        </h2>
+
+        <p>
+          低周波にはある程度効果があった。
+          ただし人の声など高周波は難しい。
+        </p>
+
+        <p>
+          市販品との差は大きいけれど、
+          「原理を理解できた」
+          という満足感があった。
+        </p>
+
+        <h2 id="next">
+          次にやること
+        </h2>
+
+        <ul>
+
+          <li>
+            DSP を使ったデジタル処理
+          </li>
+
+          <li>
+            フィードバック型の実験
+          </li>
+
+          <li>
+            FFT解析
+          </li>
+
+        </ul>
+
+        <p>
+          次はマイコンを使って、
+          もう少し本格的な実装を試したい。
+        </p>
+
+      </article>
+      <!-- Next article -->
+      <a
+        class="next-article"
+        href="./noise-cancelling-vs-earmuffs.html"
+      >
+
+        <div class="next-article-body">
+
+          <p class="next-label">
+            Next Article
+          </p>
+
+          <p class="next-title">
+            ノイズキャンセリングと耳栓、どちらが集中しやすい？
+          </p>
+
+        </div>
+
+        <div class="next-arrow">
 
           <svg
-            class="icon-moon"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            stroke-width="1.8"
+            stroke-width="2"
           >
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
-              d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"
+              d="M9 5l7 7-7 7"
             />
           </svg>
 
-          <svg
-            class="icon-sun"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            stroke-width="1.8"
+        </div>
+
+      </a>
+      <!-- Related -->
+      <section class="related">
+
+        <p class="related-label">
+          関連記事
+        </p>
+
+        <div class="related-grid">
+
+          <a
+            class="related-card"
+            href="./how-headphones-work.html"
           >
-            <circle cx="12" cy="12" r="5"/>
 
-            <path
-              stroke-linecap="round"
-              d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"
-            />
-          </svg>
+            <span class="tag">
+              オーディオ
+            </span>
 
-        </button>
+            <p class="related-card-title">
+              ヘッドホンってどうやって音を鳴らしているのか
+            </p>
 
-      </div>
+          </a>
+
+          <a
+            class="related-card"
+            href="./first-electronics-project.html"
+          >
+
+            <span class="tag">
+              電子工作
+            </span>
+
+            <p class="related-card-title">
+              初めてブレッドボードで回路を組んでみた
+            </p>
+
+          </a>
+
+        </div>
+
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+
+    <div class="footer-inner">
+
+      <p>
+        © 2026 Memo ·
+        <a href="../index.html">記事一覧</a> ·
+        <a href="../about.html">About</a>
+      </p>
+
     </div>
-  </header>
 
-  <!-- Main -->
-  <main class="page">
+  </footer>
 
-    <!-- Back -->
-    <a
-      class="article-back"
-      href="../index.html"
+    <!-- Scroll Top -->
+    <button
+      class="scroll-top"
+      aria-label="ページ上部へ戻る"
     >
 
       <svg
@@ -213,405 +607,14 @@
         <path
           stroke-linecap="round"
           stroke-linejoin="round"
-          d="M15 19l-7-7 7-7"
+          d="M5 15l7-7 7 7"
         />
       </svg>
 
-      記事一覧
+    </button>
 
-    </a>
+    <!-- JS -->
+    <script src="../main.js" defer></script>
 
-    <!-- Article Header -->
-    <header class="article-header">
-
-      <div class="article-tag-row">
-
-        <span class="tag accent">
-          ガジェット
-        </span>
-
-        <span class="tag">
-          電子工作
-        </span>
-
-      </div>
-
-      <h1 class="article-title">
-        ノイズキャンセリングって何？
-        仕組みをわかりやすく解説
-      </h1>
-
-      <div class="article-meta">
-
-        <span class="meta-item">
-          2026年5月23日
-        </span>
-
-        <span class="meta-dot">
-          ·
-        </span>
-
-        <span class="meta-item">
-          8 分で読める
-        </span>
-
-      </div>
-
-    </header>
-
-    <!-- TOC -->
-    <nav class="toc" aria-label="目次">
-
-      <p class="toc-label">
-        目次
-      </p>
-
-      <ol class="toc-list">
-
-        <li>
-          <a href="#why">
-            なぜ自作しようと思ったか
-          </a>
-        </li>
-
-        <li>
-          <a href="#principle">
-            ノイズキャンセリングの原理
-          </a>
-        </li>
-
-        <li>
-          <a href="#types">
-            フィードフォワード型とフィードバック型
-          </a>
-        </li>
-
-        <li>
-          <a href="#circuit">
-            実際に回路を組んでみた
-          </a>
-        </li>
-
-        <li>
-          <a href="#result">
-            結果と感想
-          </a>
-        </li>
-
-        <li>
-          <a href="#next">
-            次にやること
-          </a>
-        </li>
-
-      </ol>
-
-    </nav>
-
-    <!-- Article -->
-    <article class="article-body">
-
-      <h2 id="why">
-        なぜ自作しようと思ったか
-      </h2>
-
-      <p>
-        SONY の WH-1000XM シリーズを使っていて、
-        ふと「これどういう仕組みで音を消してるんだろう」
-        と気になった。
-      </p>
-
-      <p>
-        調べ始めると想像より面白くて、
-        気がついたら部品を注文していた。
-      </p>
-
-      <p>
-        完全に再現することは最初から目指していない。
-        原理を手を動かして理解したかっただけ。
-      </p>
-
-      <p>
-        結果として、
-        ちゃんと「ノイズが小さくなる」ものは作れた。
-        市販品の足元にも及ばないけど。
-      </p>
-
-      <h2 id="principle">
-        ノイズキャンセリングの原理
-      </h2>
-
-      <p>
-        ノイズキャンセリング（ANC: Active Noise Cancellation）は、
-        入ってくる騒音と逆位相の音を生成して打ち消す技術だ。
-      </p>
-
-      <p>
-        音は波なので、
-        同じ振幅で位相が180°ずれた波を重ねると
-        理論上は消える。
-      </p>
-
-      <blockquote>
-        音波の重ね合わせの原理。
-        山と谷がぴったり合うと振幅がゼロになる。
-      </blockquote>
-
-      <p>
-        問題は「リアルタイムで逆位相を生成する」こと。
-        処理遅延が数ミリ秒あるだけで位相がズレて、
-        むしろ音が大きくなることもある。
-      </p>
-
-      <p>
-        市販品の DSP がいかに優秀かを
-        実感することになった。
-      </p>
-
-      <h2 id="types">
-        フィードフォワード型とフィードバック型
-      </h2>
-
-      <p>
-        ANC の実装には大きく2種類ある。
-      </p>
-
-      <h3>
-        フィードフォワード型（FF型）
-      </h3>
-
-      <p>
-        マイクをイヤホンの外側に置き、
-        騒音が耳に届く前に検出して
-        逆位相を生成する方式。
-      </p>
-
-      <p>
-        外部騒音を先読みできるので、
-        低遅延で処理しやすい。
-        ただし、マイク位置がズレると
-        効果が落ちる。
-      </p>
-
-      <h3>
-        フィードバック型（FB型）
-      </h3>
-
-      <p>
-        マイクを耳の近くに置く方式。
-        実際に耳元へ届いた音を見て補正するので、
-        装着ズレに強い。
-      </p>
-
-      <p>
-        ただし制御ループの安定化が難しく、
-        発振するリスクがある。
-      </p>
-
-      <p>
-        最近の高級機は両方を組み合わせた
-        ハイブリッド型が多い。
-      </p>
-
-      <h2 id="circuit">
-        実際に回路を組んでみた
-      </h2>
-
-      <p>
-        使ったもの：
-      </p>
-
-      <ul>
-
-        <li>
-          ECMマイク
-        </li>
-
-        <li>
-          LM358N オペアンプ
-        </li>
-
-        <li>
-          イヤホンユニット
-        </li>
-
-        <li>
-          ブレッドボード
-        </li>
-
-      </ul>
-
-      <pre><code>マイク → マイクアンプ → 反転アンプ → イヤホン</code></pre>
-
-      <p>
-        最初は盛大に発振した。
-        マイクとイヤホンが近すぎて
-        ハウリングを起こしていた。
-      </p>
-
-      <p>
-        距離を取って、
-        ゲインを下げたら安定した。
-      </p>
-
-      <h2 id="result">
-        結果と感想
-      </h2>
-
-      <p>
-        低周波にはある程度効果があった。
-        ただし人の声など高周波は難しい。
-      </p>
-
-      <p>
-        市販品との差は大きいけれど、
-        「原理を理解できた」
-        という満足感があった。
-      </p>
-
-      <h2 id="next">
-        次にやること
-      </h2>
-
-      <ul>
-
-        <li>
-          DSP を使ったデジタル処理
-        </li>
-
-        <li>
-          フィードバック型の実験
-        </li>
-
-        <li>
-          FFT解析
-        </li>
-
-      </ul>
-
-      <p>
-        次はマイコンを使って、
-        もう少し本格的な実装を試したい。
-      </p>
-
-    </article>
-    <!-- Next article -->
-    <a
-      class="next-article"
-      href="./noise-cancelling-vs-earmuffs.html"
-    >
-
-      <div class="next-article-body">
-
-        <p class="next-label">
-          Next Article
-        </p>
-
-        <p class="next-title">
-          ノイズキャンセリングと耳栓、どちらが集中しやすい？
-        </p>
-
-      </div>
-
-      <div class="next-arrow">
-
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          stroke-width="2"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M9 5l7 7-7 7"
-          />
-        </svg>
-
-      </div>
-
-    </a>
-    <!-- Related -->
-    <section class="related">
-
-      <p class="related-label">
-        関連記事
-      </p>
-
-      <div class="related-grid">
-
-        <a
-          class="related-card"
-          href="./how-headphones-work.html"
-        >
-
-          <span class="tag">
-            オーディオ
-          </span>
-
-          <p class="related-card-title">
-            ヘッドホンってどうやって音を鳴らしているのか
-          </p>
-
-        </a>
-
-        <a
-          class="related-card"
-          href="./first-electronics-project.html"
-        >
-
-          <span class="tag">
-            電子工作
-          </span>
-
-          <p class="related-card-title">
-            初めてブレッドボードで回路を組んでみた
-          </p>
-
-        </a>
-
-      </div>
-
-    </section>
-
-  </main>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-
-    <p>
-      © 2026 Memo ·
-      <a href="../index.html">記事一覧</a> ·
-      <a href="../about.html">About</a>
-    </p>
-
-  </footer>
-
-  <!-- Scroll Top -->
-  <button
-    class="scroll-top"
-    aria-label="ページ上部へ戻る"
-  >
-
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      stroke-width="2"
-    >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        d="M5 15l7-7 7 7"
-      />
-    </svg>
-
-  </button>
-
-  <!-- JS -->
-  <script src="../main.js" defer></script>
-
-</body>
+  </body>
 </html>
