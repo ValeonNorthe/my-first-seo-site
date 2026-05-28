@@ -34,6 +34,7 @@
       bar.style.width = Math.min(pct, 100) + '%';
     }
     window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
   }
 
   /* ── Scroll-to-top button ── */
